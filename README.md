@@ -2874,28 +2874,237 @@ sudo ufw status
 sudo tcpdump -i eth0
 ```
 
----
 
-### Useful Tips and Tricks
+# Linux Command Reference
 
-#### Command Line Shortcuts
+A quick reference guide for essential Linux commands and shortcuts.
 
+
+## Command Line Shortcuts
+
+### Navigation Shortcuts
 ```
 Ctrl+A    Move to beginning of line
 Ctrl+E    Move to end of line
-Ctrl+U    Delete from cursor to beginning
-Ctrl+K    Delete from cursor to end
-Ctrl+W    Delete word before cursor
-Ctrl+L    Clear screen
-Ctrl+R    Search command history
-Ctrl+C    Cancel current command
-Ctrl+Z    Suspend current command
-Ctrl+D    Logout/exit
-!!        Repeat last command
-!$        Last argument of previous command
+Alt+B     Move back one word
+Alt+F     Move forward one word
+Ctrl+XX   Toggle between start of line and current position
 ```
 
-#### Useful Aliases
+### Editing Shortcuts
+```
+Ctrl+U    Delete from cursor to beginning of line
+Ctrl+K    Delete from cursor to end of line
+Ctrl+W    Delete word before cursor
+Ctrl+Y    Paste (yank) deleted text
+Alt+D     Delete word after cursor
+Alt+T     Swap current word with previous word
+Ctrl+T    Swap last two characters before cursor
+```
+
+### Control Shortcuts
+```
+Ctrl+L    Clear screen (same as 'clear' command)
+Ctrl+C    Cancel/kill current command
+Ctrl+Z    Suspend current command (use 'fg' to resume)
+Ctrl+D    Exit shell or end input (EOF)
+Ctrl+S    Stop output to screen (freeze)
+Ctrl+Q    Resume output to screen
+```
+
+### History Shortcuts
+```
+Ctrl+R    Search command history (reverse search)
+Ctrl+G    Escape from history search
+Ctrl+P    Previous command (same as Up arrow)
+Ctrl+N    Next command (same as Down arrow)
+!!        Repeat last command
+!$        Last argument of previous command
+!*        All arguments of previous command
+!n        Execute command number n from history
+!string   Execute most recent command starting with 'string'
+^old^new  Replace 'old' with 'new' in last command
+```
+
+### Completion
+```
+Tab       Auto-complete file/command names
+Tab Tab   Show all possible completions
+Alt+?     Show possible completions (same as Tab Tab)
+Alt+*     Insert all possible completions
+```
+
+---
+
+## Essential Commands
+
+### File Operations
+```bash
+ls          # List files
+ls -la      # List all files with details
+cd dir      # Change directory
+pwd         # Print working directory
+mkdir dir   # Create directory
+rmdir dir   # Remove empty directory
+rm file     # Remove file
+rm -r dir   # Remove directory recursively
+cp src dst  # Copy file
+mv src dst  # Move/rename file
+touch file  # Create empty file or update timestamp
+cat file    # Display file contents
+less file   # View file with pagination
+head file   # Show first 10 lines
+tail file   # Show last 10 lines
+tail -f     # Follow file updates in real-time
+```
+
+### File Permissions
+```bash
+chmod 755 file      # Change permissions (rwxr-xr-x)
+chmod +x file       # Add execute permission
+chown user file     # Change owner
+chown user:group    # Change owner and group
+chgrp group file    # Change group
+```
+
+### Search & Find
+```bash
+find . -name "*.txt"        # Find files by name
+find . -type f -size +100M  # Find large files
+grep "pattern" file         # Search in file
+grep -r "pattern" dir       # Recursive search
+locate filename             # Fast file search (uses database)
+which command               # Show command location
+whereis command             # Show binary, source, manual
+```
+
+### Text Processing
+```bash
+cat file                # Display file
+head -n 20 file         # First 20 lines
+tail -n 20 file         # Last 20 lines
+wc file                 # Count lines, words, characters
+wc -l file              # Count lines only
+sort file               # Sort lines
+uniq file               # Remove duplicate lines
+cut -d: -f1 file        # Cut field 1 (delimiter :)
+sed 's/old/new/g' file  # Replace text
+awk '{print $1}' file   # Print first column
+```
+
+### Archives & Compression
+```bash
+tar -czf archive.tar.gz dir/    # Create compressed archive
+tar -xzf archive.tar.gz         # Extract archive
+tar -tzf archive.tar.gz         # List archive contents
+zip -r archive.zip dir/         # Create zip archive
+unzip archive.zip               # Extract zip
+gzip file                       # Compress file
+gunzip file.gz                  # Decompress file
+```
+
+### Process Management
+```bash
+ps aux              # Show all processes
+ps aux | grep name  # Find specific process
+top                 # Interactive process viewer
+htop                # Better process viewer
+kill PID            # Kill process by ID
+kill -9 PID         # Force kill process
+killall name        # Kill by process name
+pkill name          # Kill by pattern
+bg                  # Resume job in background
+fg                  # Bring job to foreground
+jobs                # List background jobs
+nohup command &     # Run immune to hangups
+```
+
+### System Information
+```bash
+uname -a            # System information
+hostname            # Show hostname
+uptime              # System uptime
+date                # Current date/time
+cal                 # Calendar
+whoami              # Current user
+id                  # User ID and groups
+w                   # Who is logged in
+last                # Login history
+df -h               # Disk space
+du -sh dir          # Directory size
+free -h             # Memory usage
+lscpu               # CPU information
+lsblk               # Block devices
+```
+
+### Network Commands
+```bash
+ip addr             # Show IP addresses
+ip route            # Show routing table
+ping host           # Test connectivity
+traceroute host     # Trace route to host
+nslookup domain     # DNS lookup
+dig domain          # DNS lookup (detailed)
+ss -tulpn           # Show listening ports
+netstat -tulpn      # Show listening ports (older)
+curl url            # Transfer data from URL
+wget url            # Download file
+ssh user@host       # Connect to remote host
+scp file user@host: # Copy file to remote
+```
+
+### Package Management (Debian/Ubuntu)
+```bash
+sudo apt update             # Update package lists
+sudo apt upgrade            # Upgrade packages
+sudo apt install package    # Install package
+sudo apt remove package     # Remove package
+sudo apt search keyword     # Search packages
+apt show package            # Show package info
+```
+
+### User Management
+```bash
+sudo command        # Run command as root
+su - user           # Switch user
+passwd              # Change password
+useradd user        # Add user
+userdel user        # Delete user
+usermod -aG group   # Add user to group
+groups              # Show groups
+```
+
+### File System
+```bash
+mount               # Show mounted filesystems
+mount /dev/sdb1 /mnt    # Mount device
+umount /mnt         # Unmount
+lsblk               # List block devices
+fdisk -l            # List partitions
+```
+
+### Pipes & Redirection
+```bash
+cmd1 | cmd2         # Pipe output to input
+cmd > file          # Redirect output (overwrite)
+cmd >> file         # Redirect output (append)
+cmd 2> file         # Redirect errors
+cmd &> file         # Redirect output and errors
+cmd < file          # Input from file
+cmd | tee file      # Output to screen and file
+```
+
+### Command Chaining
+```bash
+cmd1 ; cmd2         # Run sequentially
+cmd1 && cmd2        # Run cmd2 if cmd1 succeeds
+cmd1 || cmd2        # Run cmd2 if cmd1 fails
+cmd &               # Run in background
+```
+
+---
+
+## Useful Aliases
 
 Add these to `~/.bashrc`:
 
@@ -2918,20 +3127,127 @@ alias mv='mv -i'
 # System
 alias update='sudo apt update && sudo apt upgrade'
 alias install='sudo apt install'
-alias remove='sudo apt remove'
+alias ports='sudo ss -tulpn'
 
 # Shortcuts
 alias h='history'
-alias j='jobs -l'
-alias ports='sudo ss -tulpn'
-alias psg='ps aux | grep -v grep | grep -i -e VSZ -e'
-
-# Git (if you use it)
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
+alias c='clear'
+alias e='exit'
 ```
+
+---
+
+## Common Patterns
+
+### Find and Execute
+```bash
+# Find and delete old files
+find . -name "*.log" -mtime +30 -delete
+
+# Find and change permissions
+find . -name "*.sh" -exec chmod +x {} \;
+
+# Find large files
+find / -type f -size +100M -exec ls -lh {} \; 2>/dev/null
+```
+
+### Text Processing Pipelines
+```bash
+# Count unique lines
+sort file.txt | uniq -c
+
+# Top 10 most common lines
+sort file.txt | uniq -c | sort -rn | head -10
+
+# Extract column and count
+awk '{print $1}' file.txt | sort | uniq -c
+
+# Search and count matches
+grep "error" logfile.txt | wc -l
+```
+
+### System Monitoring
+```bash
+# Watch disk space
+watch -n 5 df -h
+
+# Monitor log file
+tail -f /var/log/syslog | grep --color error
+
+# Top CPU processes
+ps aux --sort=-%cpu | head -10
+
+# Top memory processes
+ps aux --sort=-%mem | head -10
+```
+
+### Backup & Archive
+```bash
+# Backup with timestamp
+tar -czf backup-$(date +%Y%m%d).tar.gz /path/to/dir
+
+# Sync directories
+rsync -av --delete source/ destination/
+
+# Remote backup
+rsync -avz /local/dir user@host:/remote/dir
+```
+
+---
+
+## Special Variables
+
+```bash
+$0      # Script name
+$1-$9   # Script arguments
+$@      # All arguments
+$#      # Number of arguments
+$?      # Exit status of last command
+$$      # Current process ID
+$!      # PID of last background job
+$HOME   # Home directory
+$USER   # Current username
+$PATH   # Command search path
+$PWD    # Current directory
+$OLDPWD # Previous directory
+```
+
+---
+
+## File Permissions
+
+### Permission Numbers
+```
+7 = rwx (read, write, execute)
+6 = rw- (read, write)
+5 = r-x (read, execute)
+4 = r-- (read only)
+0 = --- (no permissions)
+```
+
+### Common Patterns
+```
+644 = rw-r--r--  # Regular file
+755 = rwxr-xr-x  # Executable/directory
+600 = rw-------  # Private file
+700 = rwx------  # Private directory
+```
+
+---
+
+## Quick Tips
+
+1. **Use Tab completion** - Save time typing
+2. **Use Ctrl+R** - Search command history
+3. **Use `man` pages** - `man command` for help
+4. **Use `--help`** - Quick command help
+5. **Quote variables** - Always use `"$var"`
+6. **Check exit codes** - `echo $?` after commands
+7. **Use `sudo` carefully** - Understand what you're doing
+8. **Backup before changes** - `cp file file.bak`
+9. **Test in safe environment** - Use VMs for experiments
+10. **Read error messages** - They tell you what's wrong
+
 
 #### One-Liners That Save Time
 
