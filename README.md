@@ -4,13 +4,11 @@
   <img src="logo.png" alt="Linux Logo" width="50%">
 </p>
 
-
 ---
 
 **Created by:** [CLOUDWERX LAB](http://cloudwerx.dev)  
-**Repository:** [github.com/CLOUDWERX-DEV/Linux_Learning](https://github.com/CLOUDWERX-DEV/Linux_Learning)  
+**Repository:** [github.com/CLOUDWERX-DEV/Linux-Learning](https://github.com/CLOUDWERX-DEV/Linux-Learning)  
 **License:** Open Source - Free to use, share, and modify
-
 ---
 
 ## Welcome to Linux!
